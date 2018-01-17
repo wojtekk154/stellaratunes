@@ -1,13 +1,14 @@
 /* eslint-disable no-tabs,no-undef,react/prefer-stateless-function,no-alert,prefer-destructuring */
 import React, { Component } from 'react';
-import Page from './Components/Page';
 
-class App extends Component {
+class Loader extends Component {
   render() {
     return (
-      <Page />
+      <div>
+        Loading!
+      </div>
     );
   }
 }
 
-export default App;
+export default Loader;

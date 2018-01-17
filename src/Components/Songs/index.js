@@ -1,13 +1,15 @@
 /* eslint-disable no-tabs,no-undef,react/prefer-stateless-function,no-alert,prefer-destructuring */
 import React, { Component } from 'react';
-import Page from './Components/Page';
 
-class App extends Component {
+class Songs extends Component {
   render() {
     return (
-      <Page />
+      <div>
+        List!
+        {/* map */}
+      </div>
     );
   }
 }
 
-export default App;
+export default Songs;

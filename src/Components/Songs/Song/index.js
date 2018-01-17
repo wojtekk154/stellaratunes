@@ -1,13 +1,12 @@
 /* eslint-disable no-tabs,no-undef,react/prefer-stateless-function,no-alert,prefer-destructuring */
 import React, { Component } from 'react';
-import Page from './Components/Page';
 
-class App extends Component {
-  render() {
-    return (
-      <Page />
-    );
-  }
+function Song() {
+  return (
+    <div>
+      dsasdasda
+    </div>
+  );
 }
 
-export default App;
+export default Song;
