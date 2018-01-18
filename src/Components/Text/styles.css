@@ -1,0 +1,31 @@
+.heading {
+  font-size: 20px;
+}
+
+.heading.small {
+  font-size: 14px;
+}
+
+.heading.medium {
+  font-size: 20px;
+}
+
+.heading.large {
+  font-size: 26px;
+}
+
+.text {
+  font-size: 12px;
+}
+
+.text.small {
+  font-size: 10px;
+}
+
+.text.medium {
+  font-size: 14px;
+}
+
+.text.large {
+  font-size: 20px;
+}
