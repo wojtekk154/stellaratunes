@@ -15,7 +15,7 @@ class Page extends Component {
 
   render() {
     return (
-      <div>
+      <div className="container">
         <Header/>
         Page!
         <Songs songs={this.state.songs}/>

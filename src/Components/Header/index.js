@@ -9,7 +9,7 @@ function Header() {
   return (
     <div className="header">
       <img className="logo" src={logo} alt="logo"/>
-      <h3 className="title">Stellaratunes</h3>
+      <h1 className="title">Stellaratunes</h1>
       <Input />
       <Button type="primary">Search</Button>
     </div>
