@@ -2,14 +2,16 @@
 import React from 'react';
 import './styles.css';
 import logo from './logo.svg';
+import Button from '../Button/index';
+import Input from '../Input/index';
 
 function Header() {
   return (
     <div className="header">
       <img className="logo" src={logo} alt="logo"/>
       <h3 className="title">Stellaratunes</h3>
-      <input type="text"/>
-      <button className="btn">test</button>
+      <Input />
+      <Button type="primary">Search</Button>
     </div>
   );
 }

@@ -1,5 +1,4 @@
 .form-group {
-  margin-bottom: 15px;
 }
 
 .form-label {
@@ -23,6 +22,11 @@
   width: 100%;
   display: block;
   box-sizing: border-box;
+  background-color: white;
+  border: 1px solid #cccccc;
+  outline-color: #ff7626;
+  padding: 0 20px;
+  height: 37px;
 }
 
 .form-control.small {

@@ -1,21 +1,27 @@
 .btn {
-  background: white;
-  color: black;
-  padding: 5px 20px;
-  font-family: "Arial", sans-serif;
-  font-size: 16px;
-  border: 0;
+  height: 37px;
+  border: 1px solid #cccccc;
+  background-color: white;
+  color: #ff7626;
+  padding: 10px 20px;
+  outline: none;
+  cursor: pointer;
 }
 
 .btn[disabled] {
-  background: grey;
+  background-color: #cccccc;
+  border: 1px solid #cccccc;
+  cursor:not-allowed;
 }
 
 .btn-primary {
-  background: dodgerblue;
+  background-color: #ff7626;
+  border: 1px solid #ff7626;
   color: white;
 }
 
 .btn-secondary {
-  border: 1px solid dodgerblue;
+  background-color: white;
+  border: 1px solid #cccccc;
+  color: #ff7626;
 }

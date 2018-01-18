@@ -5,12 +5,14 @@ import './styles.css';
 
 const Input = props => (
   <div className="form-group">
-    <label
-      className={`form-label ${props.size} ${props.error ? 'has-error' : ''}`}
-      htmlFor={props.name}
-    >
-      {props.label}
-    </label>
+    { props.label &&
+      <label
+        className={`form-label ${props.size} ${props.error ? 'has-error' : ''}`}
+        htmlFor={props.name}
+      >
+        {props.label}
+      </label>
+    }
     {
       props.type !== 'textarea'
         ? <input

@@ -6,28 +6,3 @@ body {
 .container {
   max-width: 1200px;
 }
-
-.btn {
-  height: 37px;
-  border: 1px solid #cccccc;
-  background-color: white;
-  color: #ff7626;
-  padding: 10px 20px;
-  transition: all .2s ease-in-out;
-  outline: none;
-}
-
-.btn:hover {
-  background-color: #ff7626;
-  border: 1px solid #ff7626;
-  color: white;
-}
-
-input {
-  background-color: white;
-  border: 1px solid #cccccc;
-  outline-color: #ff7626;
-  padding: 0 20px;
-  height: 35px;
-}
-
