@@ -28,7 +28,10 @@ class Page extends Component {
         <Header/>
         Page!
         <Songs songs={this.state.songs}/>
+        {/* When songs are being loaded the Loader component should be shown */}
         <Favourites favourites={this.state.favourites}/>
+        {/* Favourites should be saved to localstorage */}
+        {/* On page refresh they should be added to state */}
       </div>
     );
   }
