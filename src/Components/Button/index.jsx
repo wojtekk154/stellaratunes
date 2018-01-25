@@ -1,4 +1,3 @@
-/* eslint-disable import/no-extraneous-dependencies,react/prop-types */
 import React from 'react';
 import PropTypes from 'prop-types';
 import './styles.css';
@@ -20,6 +19,7 @@ function Button({
 
 Button.propTypes = {
   type: PropTypes.string,
+  children: PropTypes.string,
   buttonType: PropTypes.string,
   disabled: PropTypes.bool,
   loading: PropTypes.bool,

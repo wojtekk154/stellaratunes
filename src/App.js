@@ -1,13 +1,8 @@
-/* eslint-disable no-tabs,no-undef,react/prefer-stateless-function,no-alert,prefer-destructuring */
-import React, { Component } from 'react';
-import Page from './components/Page';
+import React from 'react';
+import HomePage from './components/HomePage';
 
-class App extends Component {
-  render() {
-    return (
-      <Page />
-    );
-  }
+function App() {
+  return <HomePage />;
 }
 
 export default App;

@@ -1,4 +1,3 @@
-/* eslint-disable import/no-extraneous-dependencies,react/prop-types */
 import React from 'react';
 import PropTypes from 'prop-types';
 import './styles.css';
@@ -16,6 +15,7 @@ function Text({ children, heading, size }) {
 
 Text.propTypes = {
   heading: PropTypes.bool,
+  children: PropTypes.string,
   size: PropTypes.oneOf(['small', 'medium', 'large'])
 };
 

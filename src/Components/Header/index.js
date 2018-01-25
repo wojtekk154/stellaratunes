@@ -1,4 +1,3 @@
-/* eslint-disable no-tabs,no-undef,react/prefer-stateless-function,no-alert,prefer-destructuring */
 import React from 'react';
 import './styles.css';
 import logo from './logo.svg';
