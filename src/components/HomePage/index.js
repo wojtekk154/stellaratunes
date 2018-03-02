@@ -18,6 +18,7 @@ class Page extends Component {
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleButtonClick = this.handleButtonClick.bind(this);
     this.addSongToFavourites = this.addSongToFavourites.bind(this);
+    this.removeFromFavourites = this.removeFromFavourites.bind(this);
   }
 
   componentDidMount() {
@@ -49,6 +50,12 @@ class Page extends Component {
     }));
   }
 
+  removeFromFavourites(song) {
+    this.setState(prevState => ({
+      favourites: prevState.favourites.filter(f => f.trackId !== song.trackId)
+    }));
+  }
+
   render() {
     const content = (
       this.state.loading ?
@@ -70,7 +77,10 @@ class Page extends Component {
         Page!
         { content }
         {/* When songs are being loaded the Loader component should be shown */}
-        <Favourites favourites={this.state.favourites}/>
+        <Favourites
+          favourites={this.state.favourites}
+          removeFromFavourites={this.removeFromFavourites}
+        />
         {/* Favourites should be saved to localstorage */}
         {/* On page refresh they should be added to state */}
       </div>

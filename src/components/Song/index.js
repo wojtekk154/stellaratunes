@@ -3,12 +3,13 @@ import PropTypes from 'prop-types';
 import Button from '../Button';
 import './style.css';
 
-function Song({ song, addSongToFavourites }) {
+function Song({ song, action, actionName }) {
   return (
     <div className="item">
-      {song.artistName} - {song.trackName}
-      <Button type="primary" onButtonClick={() => addSongToFavourites(song)}>
-        Add To favourites
+      <span className="artist">{song.artistName}</span>
+      <span className="track">{song.trackName}</span>
+      <Button type={actionName === 'Add to Favourites' ? 'primary' : 'secondary'} onButtonClick={() => action(song)}>
+        { actionName }
       </Button>
     </div>
   );
@@ -19,7 +20,8 @@ Song.propTypes = {
     artistName: PropTypes.string,
     trackName: PropTypes.string
   }),
-  addSongToFavourites: PropTypes.func
+  action: PropTypes.func,
+  actionName: PropTypes.string
 };
 
 export default Song;

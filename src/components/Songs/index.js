@@ -8,9 +8,12 @@ function Songs({ songs, addSongToFavourites }) {
     <div>
       {
         songs.map(song => (
-          <div>
-            <Song key={song.trackId} song={song} addSongToFavourites={addSongToFavourites} />
-          </div>
+          <Song
+            key={song.trackId}
+            song={song}
+            action={addSongToFavourites}
+            actionName="Add to Favourites"
+          />
         ))
       }
     </div>
