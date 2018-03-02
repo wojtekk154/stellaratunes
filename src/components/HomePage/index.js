@@ -2,19 +2,23 @@ import React, { Component } from 'react';
 import Header from '../Header';
 import Songs from '../Songs';
 import Favourites from '../Favourites';
+import Loader from '../Loader';
 import TunesService from '../../services/TunesService';
+import StorageService from '../../services/storage.service';
 
 class Page extends Component {
   constructor() {
     super();
+    this.tunesService = new TunesService();
+    this.storageService = new StorageService();
+
     this.state = {
       loading: true,
-      songs: [],
-      favourites: [],
+      songs: this.storageService.getSongs() || [],
+      favourites: this.storageService.getFavourites() || [],
       query: ''
     };
 
-    this.tunesService = new TunesService();
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleButtonClick = this.handleButtonClick.bind(this);
     this.addSongToFavourites = this.addSongToFavourites.bind(this);
@@ -24,19 +28,20 @@ class Page extends Component {
   componentDidMount() {
     this.tunesService.getData('despacito').then((data) => {
       this.setState({ songs: data, loading: false });
+      this.storageService.setSongs(data);
     });
   }
 
   handleButtonClick() {
     this.setState({ loading: true });
     this.tunesService.getData(this.state.query).then((data) => {
-      console.log(data);
+      this.setState({ songs: data, loading: false });
+      this.storageService.setSongs(data);
     });
   }
 
   handleInputChange(evt) {
     const { name, value } = evt.target;
-
     this.setState({
       [name]: value
     });
@@ -48,6 +53,7 @@ class Page extends Component {
         [...prevState.favourites, song] :
         prevState.favourites
     }));
+    this.storageService.setFavourites(this.state.favourites);
   }
 
   removeFromFavourites(song) {
@@ -59,7 +65,7 @@ class Page extends Component {
   render() {
     const content = (
       this.state.loading ?
-        '' :
+        <Loader/> :
         (
           <Songs
             songs={this.state.songs}
@@ -75,7 +81,7 @@ class Page extends Component {
           onButtonClick={this.handleButtonClick}
         />
         Page!
-        { content }
+        {content}
         {/* When songs are being loaded the Loader component should be shown */}
         <Favourites
           favourites={this.state.favourites}
